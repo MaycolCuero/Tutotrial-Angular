@@ -1,0 +1,29 @@
+<table class="table">
+  <thead>
+    <th>Nombre</th>
+    <th>Apellidos</th>
+    <th>Genero</th>
+    <th>Nombre usuario</th>
+    <th>clave</th>
+    <th>estado</th>
+    <th>Editar</th>
+    <th>Eliminar</th>
+  
+  </thead>
+  <tbody>
+    <tr *ngFor= "let user of Allusuario | async">
+      <td>{{user.nombre}}</td>
+      <td>{{user.apellido}}</td>
+      <td>{{user.genero}}</td>
+      <td>{{user.nom_usuario}}</td>
+      <td>{{user.clave}}</td>
+      <td>{{user.estado}}</td>
+      <td>
+        <button type = "button" class="btn btn-info" matTooltip="Click Edit Button" (click)="loadUsuarioToEdit(user.id)">Edit</button>
+      </td>
+      <td>
+        <button type = "button" class="btn btn-danger" matTooltip="Click Edit Button" (click)="UsuarioToDelete(user.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
