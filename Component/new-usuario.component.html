@@ -1,0 +1,40 @@
+<form [formGroup] = "usuarioForm" (ngSubmit)="onFormSubmit(usuarioForm.value)">
+  
+  <div class="container">
+
+
+  <div class="form-group">
+    <label>Nombre</label>
+    <input formControlName="nombre" placeholder="Ingrese los nombres" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>Apellidos</label>
+    <input formControlName="apellido" placeholder="your addres" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>Genero</label>
+    <select formControlName = "genero" class ="form-control">
+      <option *ngFor = "let genero of Allgenero | async" value={{genero.id}}>{{genero.nombre}}</option>
+    </select>
+  </div>
+
+  
+  <div class="form-group">
+    <label>Nombre de Usuario</label>
+    <input formControlName="nom_usuario" placeholder="Ingrese el nombre de usuario" class="form-control">
+  </div>
+
+  
+  <div class="form-group">
+    <label>Contraseña</label>
+    <input formControlName="clave" placeholder="Ingrese la contrseña " class="form-control">
+  </div>
+  
+  <div class ="form-group">
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+  
+</div>
+</form>
